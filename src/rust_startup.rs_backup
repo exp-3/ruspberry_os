@@ -1,0 +1,10 @@
+#![feature(lang_items, asm)]
+#![crate_type = "staticlib"]
+#![no_std]
+
+pub extern rust_startup() {
+    
+}
+
+#[lang = "eh_personality"]
+#[lang = "panic_fmt"]
