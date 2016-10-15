@@ -1,5 +1,6 @@
-const SYSTIME_BASE: *const u32 = 0x3f003000 as *const u32;
-// const systime: *const u32 = SYSTIME_BASE as *const u32;
+use periph_driver;
+
+const SYSTIME_BASE: *const u32 = (periph_driver::PHY_IO_PERIPH_BASE + 0x00003000) as *const u32;
 
 pub fn get_systime()->u64 {
     let systime_clo = unsafe{ SYSTIME_BASE.offset(1) as *const u32 };
@@ -21,7 +22,4 @@ pub fn delay_ms(delay: u32) {
     while get_systime() < alerm_time {
         unsafe {asm!("");}
     }
-    // for _ in 1 .. 500000 {
-    //     unsafe {asm!("");}
-    // }
 }
