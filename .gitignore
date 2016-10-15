@@ -1,2 +1,7 @@
-target
-build
+/*
+!src
+!.gitignore
+!Cargo.lock
+!Cargo.toml
+!kernel.ld
+!Makefile
