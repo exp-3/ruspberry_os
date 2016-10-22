@@ -1,6 +1,6 @@
-use periph_driver;
+use ::PHY_IO_PERIPH_BASE;
 
-const SYSTIME_BASE: *const u32 = (periph_driver::PHY_IO_PERIPH_BASE + 0x00003000) as *const u32;
+const SYSTIME_BASE: *const u32 = (PHY_IO_PERIPH_BASE + 0x00003000) as *const u32;
 
 pub fn get_systime()->u64 {
     let systime_clo = unsafe{ SYSTIME_BASE.offset(1) as *const u32 };

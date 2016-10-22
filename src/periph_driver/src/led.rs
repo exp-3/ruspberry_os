@@ -1,4 +1,4 @@
-use periph_driver::gpio;
+use ::gpio;
 
 const PIN: u32 = 47;
 

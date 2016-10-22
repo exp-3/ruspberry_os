@@ -1,4 +1,11 @@
 [root]
 name = "ruspberry_os"
 version = "0.1.0"
+dependencies = [
+ "periph_driver 0.1.0",
+]
+
+[[package]]
+name = "periph_driver"
+version = "0.1.0"
 

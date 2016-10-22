@@ -1,7 +1,7 @@
 // kernel_main.rs
 
 // use periph_driver;
-use periph_driver;
+extern crate periph_driver;
 
 pub fn kernel_main() {
     periph_driver::led::init();

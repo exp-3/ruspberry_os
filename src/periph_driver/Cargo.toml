@@ -1,0 +1,6 @@
+[package]
+name = "periph_driver"
+version = "0.1.0"
+authors = ["exp-3 <takaaki.service@gmail.com>"]
+
+[dependencies]

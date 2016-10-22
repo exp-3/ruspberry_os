@@ -1,9 +1,9 @@
 extern crate core;
 use core::intrinsics::volatile_store;
 
-use periph_driver;
+use ::PHY_IO_PERIPH_BASE;
 
-const UART0_BASE: *const u32 = (periph_driver::PHY_IO_PERIPH_BASE + 0x00201000) as *const u32;
+const UART0_BASE: *const u32 = (PHY_IO_PERIPH_BASE + 0x00201000) as *const u32;
 
 pub fn init() {
     let ibrd = unsafe {UART0_BASE.offset(9) as *mut u32};

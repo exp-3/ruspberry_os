@@ -1,7 +1,8 @@
 extern crate core;
 
 use core::intrinsics::volatile_store;
-use periph_driver;
+
+use ::PHY_IO_PERIPH_BASE;
 
 pub enum GPFSEL {
     INPUT,
@@ -14,7 +15,7 @@ pub enum GPFSEL {
     ALT5,
 }
 
-const GPIO_BASE: *const u32 = (periph_driver::PHY_IO_PERIPH_BASE + 0x00200000) as *const u32;
+const GPIO_BASE: *const u32 = (PHY_IO_PERIPH_BASE + 0x00200000) as *const u32;
 
 pub fn init(pin: u32, func: GPFSEL) {
     let func_reg_offset = (pin / 10) as isize;

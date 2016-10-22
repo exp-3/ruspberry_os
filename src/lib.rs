@@ -3,15 +3,15 @@
 
 #![crate_type="staticlib"]
 
+extern crate periph_driver;
+
 mod runtime;
 
 mod kernel_main;
 mod kernel_startup;
-mod periph_driver;
-
 
 #[no_mangle]
-pub fn _main() {
+pub fn main() {
     kernel_startup::kernel_startup();
     kernel_main::kernel_main();
     loop{}

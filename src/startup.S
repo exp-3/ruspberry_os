@@ -7,7 +7,7 @@ _start:
   ldr sp, =0x06400000
 
   // main呼び出し
-  bl _main
+  bl main
 
   // 終了
   b .

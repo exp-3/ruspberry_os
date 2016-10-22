@@ -3,4 +3,8 @@ name = "ruspberry_os"
 version = "0.1.0"
 authors = ["exp-3 <takaaki.service@gmail.com>"]
 
+[lib]
+crate_type = ["staticlib"]
+
 [dependencies]
+periph_driver = { path = "src/periph_driver" }
