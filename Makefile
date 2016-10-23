@@ -28,7 +28,7 @@ $(BUILD)/output.elf: $(OBJS) $(RUST_OBJ)
 $(BUILD)/%.o: %.S
 	$(ARMGNU)-as -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -o $@ $<
 
-$(RUST_OBJ):
+$(RUST_OBJ): $(shell find -name *.rs)
 	@cargo build --release --verbose
 
 clean:

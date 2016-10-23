@@ -1,7 +1,8 @@
 extern crate core;
 use core::intrinsics::volatile_store;
-
 use ::PHY_IO_PERIPH_BASE;
+use ::gpio;
+
 
 const UART0_BASE: *const u32 = (PHY_IO_PERIPH_BASE + 0x00201000) as *const u32;
 
@@ -13,7 +14,11 @@ pub fn init() {
 
     unsafe { volatile_store(cr, 0); }
 
-    // TODO: set pin mode
+    // gpio settings
+    gpio::set_pud(14, gpio::GPPUD::PD);
+    gpio::set_pud(15, gpio::GPPUD::PD);
+    gpio::init(14, gpio::GPFSEL::ALT0);
+    gpio::init(15, gpio::GPFSEL::ALT0);
 
     unsafe {
         // set baudrate 115200
